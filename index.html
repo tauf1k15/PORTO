@@ -1,0 +1,426 @@
+`<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | Your Name</title>
+
+  <style>
+  :root {
+    --bg: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #1d4ed8;
+    --accent-soft: #dbeafe;
+    --border: #c7d2fe;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+  }
+
+  section {
+    margin-bottom: 90px;
+  }
+
+  h1 {
+    font-size: 46px;
+    font-weight: 800;
+    color: var(--accent);
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 28px;
+    color: var(--accent);
+  }
+
+  p {
+    color: var(--muted);
+  }
+
+  .accent {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .hero img {
+    width: 160px;
+    height: 200px;
+    border-radius: 18px;
+    object-fit: cover;
+    border: 4px solid var(--accent);
+    box-shadow: 0 18px 40px rgba(29, 78, 216, 0.35);
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    position: relative;
+    transition: all 0.35s ease;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: linear-gradient(135deg, transparent, var(--accent-soft));
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(29, 78, 216, 0.18);
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 12px;
+  }
+
+  li {
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  /* PROJECT IMAGE */
+  .project-img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    border: 2px solid var(--border);
+  }
+
+  /* CONTACT CARD */
+  .card a {
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    padding-top: 50px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero img {
+      margin: auto;
+    }
+  }
+
+  /* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(248, 250, 252, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--border);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.logo span {
+  color: var(--text);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+}
+
+.nav-menu a {
+  font-weight: 600;
+  color: var(--text);
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-menu a {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+  background: #e0e7ff;
+}
+
+.nav-menu a.active::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  margin-top: 4px;
+}
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 16px;
+    font-size: 14px;
+  }
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+</style>
+
+</head>
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (scrollY >= sectionTop - 100) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">PORTOFOLIO<span></span></div>
+    <ul class="nav-menu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="container">
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <img src="profile.jpg" alt="Profile Photo">
+    <div>
+      <h1>Taufik Hidayat</h1>
+      <p>
+        <span class="accent">AI & Computer Vision Developer</span><br>
+        Berpengalaman membangun sistem deteksi objek real-time
+        berbasis deep learning untuk kebutuhan industri dan riset.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3 class="accent">Programming</h3>
+        <ul>
+          <li>Python (Data & AI)</li>
+          <li>HTML & CSS</li>
+          <li>Basic JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="accent">AI & Computer Vision</h3>
+        <ul>
+          <li>YOLOv8 Object Detection</li>
+          <li>Image Processing</li>
+          <li>Model Training & Evaluation</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="accent">Tools & Hardware</h3>
+        <ul>
+          <li>OpenCV</li>
+          <li>Raspberry Pi</li>
+          <li>Industrial Camera</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img src="oilpalm.jpg" class="project-img" alt="Project 1">
+        <h3>Oil Palm Fruit Detection</h3>
+        <p>
+          Sistem deteksi buah sawit pasca perontokan
+          menggunakan YOLOv8 untuk estimasi oil losses.
+        </p>
+        <ul>
+          <li>• Real-time detection</li>
+          <li>• Optimized for embedded system</li>
+          <li>• Industrial use case</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="assets/project2.jpg" class="project-img" alt="Project 2">
+        <h3>Vision-Based Monitoring</h3>
+        <p>
+          Sistem monitoring visual menggunakan kamera industri
+          untuk quality control dan analisis data.
+        </p>
+        <ul>
+          <li>• Camera integration</li>
+          <li>• Efficient inference</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="assets/project3.jpg" class="project-img" alt="Project 3">
+        <h3>Object Classification System</h3>
+        <p>
+          Sistem klasifikasi objek berbasis deep learning
+          untuk keperluan riset dan prototype.
+        </p>
+        <ul>
+          <li>• Dataset preparation</li>
+          <li>• Model evaluation</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: thauf1khidayat0115@gmail.com</p>
+      <p>GitHub: <a href="#">github.com/yourname</a></p>
+      <p>LinkedIn: <a href="#">linkedin.com/in/yourname</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 — Modern Portfolio
+  </footer>
+
+</div>
+
+</body>
+</html>
