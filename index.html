@@ -141,6 +141,11 @@
     font-weight: 600;
   }
 
+  #contact a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
   footer {
     text-align: center;
     color: var(--muted);
@@ -282,6 +287,20 @@ section {
   transform: translateY(-4px);
   box-shadow: 0 18px 40px rgba(29, 78, 216, 0.45);
   background: linear-gradient(135deg, #1e40af, #1d4ed8);
+}
+
+.card {
+  position: relative;
+}
+
+.card::before {
+  pointer-events: none;
+}
+
+.card p,
+.card a {
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -429,14 +448,32 @@ section {
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: thauf1khidayat0115@gmail.com</p>
-      <p>GitHub:<a href="https://github.com/tauf1k15" target="_blank">github.com/tauf1k15</a></p>
-      <p>LinkedIn: <a href="#">linkedin.com/in/yourname</a></p>
-    </div>
-  </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>
+      Email:
+      <a href="mailto:thauf1khidayat0115@gmail.com">
+        thauf1khidayat0115@gmail.com
+      </a>
+    </p>
+
+    <p>
+      GitHub:
+      <a href="https://github.com/tauf1k15" target="_blank">
+        github.com/tauf1k15
+      </a>
+    </p>
+
+    <p>
+      LinkedIn:
+      <a href="https://www.linkedin.com/in/USERNAME-KAMU" target="_blank">
+        linkedin.com/in/USERNAME-KAMU
+      </a>
+    </p>
+  </div>
+</section>
+
 
   <footer>
     © 2026 — Modern Portfolio
